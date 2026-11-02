@@ -1,0 +1,228 @@
+/* ---------- FONTS (files live in the fonts folder) ---------- */
+@font-face {
+  font-family: 'Abel';
+  src: url('fonts/Abel-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Agdasima';
+  src: url('fonts/Agdasima-Regular.ttf') format('truetype');
+}
+
+/* ---------- BASICS ---------- */
+:root {
+  --bg: #F8F8EC;
+  --text: #000;
+  --soft: rgba(0, 0, 0, 0.75); /* the lighter text */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2 {
+  font-family: 'Agdasima', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2.2rem; }
+
+.soft { color: var(--soft); }
+
+/* the centered content area (78% wide, like the Figma design) */
+.wrap {
+  width: 78%;
+  margin: 0 auto;
+}
+
+
+/* ---------- HOME: HERO ---------- */
+/* the hero is one image with the name already on it */
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ---------- HOME: PROJECT CARDS ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 5rem auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 570px;
+  padding: 20px 18px 25px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.pocket { background: #DED8C0; }
+.anilog { background: #CFC7B2; }
+.fisher { background: #D3CDA9; }
+
+.card-img {
+  position: relative;
+  height: 96px;
+  margin-bottom: 80px;
+  background: #2b2b22;
+  border-radius: 4px;
+}
+
+.card-img img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* the two little "ticket notches" on each side */
+.card-img::before,
+.card-img::after {
+  content: "";
+  position: absolute;
+  top: 115px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+.card-img::before { left: -29px; }
+.card-img::after { right: -29px; }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 7px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem 0 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--soft);
+}
+
+.see { margin-top: auto; }
+
+
+/* ---------- HOME: ABOUT ME ---------- */
+.about { margin-bottom: 7rem; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 25px;
+  margin-top: 2rem;
+}
+
+
+/* ---------- HOME: GALLERY + CONTACT ---------- */
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 2.75fr;
+  gap: 25px;
+  align-items: end;
+  margin: 0 auto 6rem;
+}
+
+.contact h2 { margin-bottom: 0.8rem; }
+.contact a { display: block; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 28px;
+}
+
+.gallery img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.gallery figcaption { margin-top: 0.5rem; }
+
+
+/* ---------- PROJECT PAGES ---------- */
+.back {
+  display: block;
+  padding: 3rem 7.5% 2rem;
+}
+
+.hero-img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.hero-img.wide { aspect-ratio: 16 / 9; }
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 3.5rem;
+}
+
+.tagline {
+  margin: 1rem 0 2.5rem;
+  font-size: 1.2rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--soft);
+  margin-bottom: 2.5rem;
+}
+
+/* label on the left, text on the right */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+  margin-bottom: 2rem;
+}
+
+.row p,
+.learnings p {
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.screens {
+  margin: 4rem 0;
+  border-radius: 6px;
+}
+
+.decisions > h2,
+.learnings > h2 { margin-bottom: 1.8rem; }
+
+.learnings { padding: 3rem 0 6rem; }
